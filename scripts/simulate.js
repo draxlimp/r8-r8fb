@@ -1,0 +1,10 @@
+const { createDefaultGuildConfig } = require('../dist/config/defaults.js');
+const { resolveBypass } = require('../dist/protection/bypassEngine.js');
+const { ThresholdEngine } = require('../dist/protection/thresholdEngine.js');
+const { incidentId } = require('../dist/utils/ids.js');
+const cfg = createDefaultGuildConfig('SIMULATED_GUILD');
+cfg.bypasses.push({ id:'BP-SIM', kind:'user', targetId:'SIMULATED_USER', modules:['anti_link'], behavior:{ignoreDetection:false,ignorePunishment:true,ignoreRestoration:true,ignoreLimit:true,continueLogging:true}, reason:'Simulação', createdBy:'SYSTEM', createdAt:new Date().toISOString(), expiresAt:null });
+const bypass = resolveBypass(cfg,{botUserId:'BOT',executorId:'SIMULATED_USER',executorRoleIds:[],module:'anti_link'});
+const thresholds = new ThresholdEngine();
+const samples = [1,2,3].map(()=>thresholds.hit('SIMULATED_GUILD','anti_spam','SIMULATED_USER',3,15));
+console.log(JSON.stringify({ incidentId:incidentId(), bypass:{matched:bypass.bypassed,reason:bypass.reason}, threshold:samples.at(-1), safe:true, note:'Nenhuma ação foi enviada ao Discord.' },null,2));

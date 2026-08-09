@@ -1,0 +1,60 @@
+{
+  "token": "",
+  "prefix": "!",
+  "owners": [
+    "",
+    " "
+  ],
+  "credits": {
+    "enabled": true,
+    "title": "Créditos",
+    "people": [
+      {
+        "name": "r8fb",
+        "discord": "@r8fb",
+        "role": "Desenvolvedor principal"
+      }
+    ]
+  },
+  "defaultPresence": {
+    "status": "online",
+    "activityType": "watching",
+    "activityText": "Protegendo servidores",
+    "rotationEnabled": true,
+    "rotationIntervalSeconds": 5,
+    "rotationActivities": [
+      {
+        "activityType": "watching",
+        "activityText": "[members] membros na comunidade"
+      },
+      {
+        "activityType": "listening",
+        "activityText": "[servers] servidores conectados"
+      },
+      {
+        "activityType": "watching",
+        "activityText": "Use [prefix]help para ver os comandos"
+      }
+    ]
+  },
+  "panel": {
+    "sessionTimeoutSeconds": 3600,
+    "deleteCommandMessage": true,
+    "defaultColor": "#111111",
+    "maxSessionsPerUser": 3
+  },
+  "storage": {
+    "automaticBackup": true,
+    "backupBeforeWrite": true,
+    "maximumBackups": 20
+  },
+  "logging": {
+    "level": "INFO",
+    "rotateAfterBytes": 5242880,
+    "keepFiles": 10
+  },
+  "development": {
+    "enabled": false,
+    "simulateOnly": false
+  }
+}

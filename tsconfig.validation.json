@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist-validation",
+    "strict": true,
+    "noEmitOnError": true
+  },
+  "include": ["src/**/*.ts", "validation-stubs/**/*.d.ts"],
+  "exclude": ["node_modules", "dist", "dist-validation", "tests"]
+}
